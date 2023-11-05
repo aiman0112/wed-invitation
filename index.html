@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" type="text/css" href="styles.css">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+  <div class="timer">
+    <div class="timer-box">
+      <div class="timer-value" id="days">00</div>
+      <div class="timer-label">Days</div>
+    </div>
+    <div class="timer-box">
+      <div class="timer-value" id="hours">00</div>
+      <div class="timer-label">Hours</div>
+    </div>
+    <div class="timer-box">
+      <div class="timer-value" id="minutes">00</div>
+      <div class="timer-label">Minutes</div>
+    </div>
+    <div class="timer-box">
+      <div class="timer-value" id="seconds">00</div>
+      <div class="timer-label">Seconds</div>
+    </div>
+  </div>
+
+  <div class="text-box">
+    <p class="line line-bold">MR. & MRS. HAJI GOHAR KHAN</p>
+    <p class="line">REQUEST THE PLEASURE OF YOUR COMPANY</p>
+    <p class="line">AT THE WEDDING CEREMONY OF THEIR BELOVED SON</p>
+    <br><br>
+    <p class="line line-italic line-large">ASFANDYAR KHAN</p>
+    <p class="line">WITH</p>
+    <p class="line line-italic  line-large">DO MR. HAMID-UR-REHMAN</p>
+    <br>
+    <div class="date-time">
+      <p>
+        <hr class="lline">
+      <span class="time ">SUNDAY<br> </span>
+      <span class="month">NOVEMBER</span>
+      <span class="day">19<br> </span>
+      <span class="year">2023</span>
+      <hr class="lline">
+      </p>
+      <p class="time"> 11:00 AM - 1:00 PM</p>
+      <br>
+    </div>
+    <p class="line">NEW ABADI MOH AWAN, SENI GUMBAT KOHAT</p>
+    <p class="line line-italic">RECEPTION TO FOLLOW</p>
+  </div>
+  
+  <script>
+   // Set the date and time of the event
+   const eventDate = new Date("2023-11-19T11:00:00");
+
+   // Function to update the timer
+   function updateTimer() {
+     const now = new Date();
+     const timeRemaining = eventDate - now;
+
+     if (timeRemaining <= 0) {
+       // Event has already occurred
+       document.querySelector(".timer").innerHTML = "Event has already occurred.";
+     } else {
+       const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+       const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+       const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+       const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+       document.querySelector("#days").innerHTML = days.toString().padStart(2, '0');
+       document.querySelector("#hours").innerHTML = hours.toString().padStart(2, '0');
+       document.querySelector("#minutes").innerHTML = minutes.toString().padStart(2, '0');
+       document.querySelector("#seconds").innerHTML = seconds.toString().padStart(2, '0');
+     }
+   }
+
+   // Update the timer every second
+   setInterval(updateTimer, 1000);
+ </script>
+</body>
+</html>

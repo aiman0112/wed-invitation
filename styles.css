@@ -1,0 +1,214 @@
+/* Default styles for larger screens */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  /* align-items: center; Remove or adjust this property */
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: url('flower.jpg') no-repeat center center fixed; /* Use background shorthand property */
+  background-size: cover;
+  overflow: hidden; /* Hide overflow when screen width is larger than 768px */
+}
+
+
+/* Image styles */
+picture img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Timer styles for larger screens */
+.timer {
+  position: absolute;
+  left: 5vw; /* Adjust the left positioning */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the left */
+  justify-content: flex-start; /* Adjust to align items to the top */
+  top: 2vw; /* Adjust the top distance */
+  bottom: 2vw; /* Adjust the bottom distance */
+}
+
+/* Timer box styles for larger screens */
+.timer-box {
+  background-color: rgba(255, 255, 255, 0.5);
+  margin: 5px;
+  padding: 2vw; /* Adjust the padding as needed */
+  border-radius: 20px;
+  left: 20vw;
+  text-align: center; /* Center text horizontally */
+  width: 10vw; /* Set a fixed width for all timer boxes */
+  height: 10vw; /* Set a fixed height for all timer boxes */
+}
+
+/* Timer value and label styles for larger screens */
+.timer-value {
+  font-size: 2.5vw;
+}
+
+.timer-label {
+  font-size: 1.4vw;
+}
+
+/* Text box styles for larger screens */
+.text-box {
+  position: absolute;
+  left: 40vw; /* Adjust the left positioning for text box */
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2vw; /* Adjust the padding as needed */
+  border-radius: 20px;
+  width: 40%;
+  height: auto; /* Change height to auto to allow for content expansion */
+  top: 2vw; /* Fixed top margin */
+  bottom: 2vw; /* Fixed bottom margin */
+  text-align: center; /* Center text horizontally */
+}
+
+/* Line styles */
+.lline {
+  border: none;
+  width: 100%;
+  border-top: 1px solid #333;
+  margin: 0.5vw;
+}
+
+/* Text styles for larger screens */
+.line {
+  font-size: 1vw; /* Adjust font size */
+  margin: 1vw 0;
+  color: #333;
+}
+
+.line-bold {
+  font-weight: bold;
+}
+
+.line-italic {
+  font-style: italic;
+}
+
+.line-large {
+  font-size: 2vw; /* Adjust font size */
+}
+
+/* Date and time styles for larger screens */
+.date-time {
+  text-align: center;
+  margin: 2vw 0;
+}
+
+/* Month style for larger screens */
+.month {
+  font-size: 2vw; /* Adjust font size */
+}
+
+/* Day style for larger screens */
+.day {
+  font-size: 3.5vw; /* Adjust font size */
+  font-weight: bold;
+  display: block;
+}
+
+/* Date style for larger screens */
+date {
+  font-size: 3vw; /* Adjust font size */
+  margin: 0 10px;
+  display: inline-block;
+}
+
+/* Time style for larger screens */
+time {
+  font-size: 5vw; /* Adjust font size */
+  display: inline-block;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Year style for larger screens */
+year {
+  font-size: 3.5vw; /* Adjust font size */
+}
+
+/* Mobile responsive styles using media queries */
+@media (max-width: 768px) {
+  /* Styles for screens up to 768px wide */
+  body {
+    background-size: cover;
+    justify-content: flex-start; /* Center horizontally and align content to the top */
+  }
+
+  .timer {
+    left: 5vw;
+    right: auto; /* Remove right positioning */
+    width: auto;
+    padding: 2vw;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start; /* Adjust to align items to the top */
+    top: 30vw; /* Adjust the top distance */
+    bottom: 2vw; /* Adjust the bottom distance */
+  }
+
+  .timer-box {
+    padding: 2vw; /* Adjust the padding for smaller screens */
+    border-radius: 20px;
+    width: 10vw; /* Set a fixed width for all timer boxes */
+    height: 10vw; /* Set a fixed height for all timer boxes */
+  }
+
+  .timer-value {
+    font-size: 3vw;
+  }
+
+  .timer-label {
+    font-size: 1.8vw; /* Adjust font size */
+  }
+
+  .text-box {
+    right: 5vw; /* Adjust the left positioning for text box */
+    height: auto;
+    padding: 8vw;
+    width: 50%;
+    border-radius: 20px;
+    left: auto; /* Remove right positioning */
+    top: 6vw; /* Fixed top margin */
+    bottom: 2vw; /* Fixed bottom margin */
+    text-align: center; /* Center text horizontally */
+  }
+
+  .line {
+    font-size: 2.8vw; /* Adjust font size */
+    margin: 1vw 0;
+  }
+
+  .line-large {
+    font-size: 4vw; /* Adjust font size */
+  }
+
+  .date-time {
+    margin: 3vw 0;
+  }
+
+  .month {
+    font-size: 4.5vw; /* Adjust font size */
+  }
+
+  .day {
+    font-size: 5.5vw; /* Adjust font size */
+    display: block;
+  }
+
+  .date,
+  .time,
+  .year {
+    font-size: 4vw; /* Adjust font size */
+  }
+
+  .lline {
+    margin: 1vw;
+  }
+}
